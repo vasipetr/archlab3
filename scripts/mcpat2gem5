@@ -1,0 +1,26 @@
+#!/bin/bash
+
+for i in {1..20}
+do
+python ./mcpat/Scripts/GEM5ToMcPAT.py ./gem5/results_lab2/specbzip/specbzip_$i/stats.txt ./gem5/results_lab2/specbzip/specbzip_$i/config.json ./mcpat/mcpat/ProcessorDescriptionFiles/inorder_arm.xml -o ./mcpat/mcpat/xmls_gem5/specbzip/specbzip_$i.xml
+done
+
+for i in {1..20}
+do
+python ./mcpat/Scripts/GEM5ToMcPAT.py ./gem5/results_lab2/specmcf/specmcf_$i/stats.txt ./gem5/results_lab2/specmcf/specmcf_$i/config.json ./mcpat/mcpat/ProcessorDescriptionFiles/inorder_arm.xml -o ./mcpat/mcpat/xmls_gem5/specmcf/specmcf_$i.xml
+done
+
+for i in {1..20}
+do
+python ./mcpat/Scripts/GEM5ToMcPAT.py ./gem5/results_lab2/spechmmer/spechmmer_$i/stats.txt ./gem5/results_lab2/spechmmer/spechmmer_$i/config.json ./mcpat/mcpat/ProcessorDescriptionFiles/inorder_arm.xml -o ./mcpat/mcpat/xmls_gem5/spechmmer/spechmmer_$i.xml
+done
+
+for i in {1..20}
+do
+python ./mcpat/Scripts/GEM5ToMcPAT.py ./gem5/results_lab2/specsjeng/specsjeng_$i/stats.txt ./gem5/results_lab2/specsjeng/specsjeng_$i/config.json ./mcpat/mcpat/ProcessorDescriptionFiles/inorder_arm.xml -o ./mcpat/mcpat/xmls_gem5/specsjeng/specsjeng_$i.xml
+done
+
+for i in {1..20}
+do
+python ./mcpat/Scripts/GEM5ToMcPAT.py ./gem5/results_lab2/speclibm/speclibm_$i/stats.txt ./gem5/results_lab2/speclibm/speclibm_$i/config.json ./mcpat/mcpat/ProcessorDescriptionFiles/inorder_arm.xml -o ./mcpat/mcpat/xmls_gem5/speclibm/speclibm_$i.xml
+done
