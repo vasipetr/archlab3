@@ -1,0 +1,26 @@
+#!/bin/bash
+
+for i in {1..20}
+do
+   python ./print_energy.py ./mcpat_results/specbzip/specbzip_$i.txt ./scripts_results/specbzip/specbzip_$i/stats.txt > ./energy_results/specbzip/specbzip_$i.txt
+done
+
+for i in {1..20}
+do
+   python ./print_energy.py ./mcpat_results/specmcf/specmcf_$i.txt ./scripts_results/specmcf/specmcf_$i/stats.txt > ./energy_results/specmcf/specmcf_$i.txt
+done
+
+for i in {1..20}
+do
+   python ./print_energy.py ./mcpat_results/spechmmer/spechmmer_$i.txt ./scripts_results/spechmmer/spechmmer_$i/stats.txt > ./energy_results/spechmmer/spechmmer_$i.txt
+done
+
+for i in {1..20}
+do
+   python ./print_energy.py ./mcpat_results/specsjeng/specsjeng_$i.txt ./scripts_results/specsjeng/specsjeng_$i/stats.txt > ./energy_results/specsjeng/specsjeng_$i.txt
+done
+
+for i in {1..20}
+do
+   python ./print_energy.py ./mcpat_results/speclibm/speclibm_$i.txt ./scripts_results/speclibm/speclibm_$i/stats.txt > ./energy_results/speclibm/speclibm_$i.txt
+done
