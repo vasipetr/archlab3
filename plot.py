@@ -1,5 +1,5 @@
 import matplotlib.pyplot as plt
-#specbzip
+
 # Cache Line Size
 x1 = [32,64,128]
 y1 = [7.07233, 9.24063, 25.80104]
