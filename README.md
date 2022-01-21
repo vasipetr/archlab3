@@ -75,12 +75,16 @@ EnergyEfficiencyXeon/EnergyEfficiencyA9 = 0.55PerformanceA9/0.34PerformanceA9= 1
 ##### Ερώτημα 2
 Ακολουθούν τα διαγράμματα για κάθε benchmark ως προς Area και Peak Power σύμφωνα με τις αλλαγές που έγιναν στις παραμέτρους στο προηγούμενο εργαστήριο:
 * __Για το specbzip:__
+
 ![Figure_1](https://user-images.githubusercontent.com/73646657/150534128-f462ae40-f431-40cd-b33c-612401ed278b.png)
 ![Figure_2](https://user-images.githubusercontent.com/73646657/150534131-a2a10350-4ae4-4751-a816-5dd5b59d6ac2.png)
 ![Figure_3](https://user-images.githubusercontent.com/73646657/150534123-c258599d-1bbc-4e96-a4e4-32255c20337b.png)
 ![Figure_4](https://user-images.githubusercontent.com/73646657/150534124-331fa83a-7a15-4849-9b65-0ecb6a9ff5ae.png)
 ![Figure_5](https://user-images.githubusercontent.com/73646657/150534125-fc8028d5-f829-46d4-8524-acce8691a8cb.png)
 ![Figure_6](https://user-images.githubusercontent.com/73646657/150534127-4bab38b7-87a8-46df-be17-1edcba5dced6.png)
+
+* __Για το specmcf:__
+
 
 
 
