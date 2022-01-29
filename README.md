@@ -84,6 +84,7 @@ Tο εύρος τιμών των παραμέτρων που χρησιμοπο�
 * L2 Associativity: 1, 2, 4, 8
 * Cache Line Size: 32, 64, 128
 
+Οι συνδυασμοί που έγιναν στο προηγούμενο εργαστήριο:
 |Προσομοιώσεις|Συνδυασμός Παραμέτρων|
 |:-:|:-------------------:|
 |1|Cache Line Size: 32KB, L1 Dache: 64KB, L1 Icache: 32KB, L2 Cache: 512KB, L1 Dcache Associativity: 1, L1 Icache Associativity: 1, L2 Associativity: 2|
@@ -108,7 +109,7 @@ Tο εύρος τιμών των παραμέτρων που χρησιμοπο�
 |20|Cache Line Size: 64KB, L1 Dache: 64KB, L1 Icache: 32KB, L2 Cache: 512KB, L1 Dcache Associativity: 1, L1 Icache Associativity: 1, L2 Associativity: 8|
 
 
-Aκολουθεί ένας πίνακας με τις ακριβείς τιμές των Area, Peak Power καθώς και Runtime Dynamic, Subthreshold Leakage και Gate Leakage για κάθε προσομοίωση ξεχωριστά:
+Aκολουθεί ένας πίνακας με τις ακριβείς τιμές των Area και Peak Power για κάθε συνδυασμό:
 | Προσομοιώσεις | Area (mm^2) |Peak Power (W)|
 |:-------------:|:-----------:|:---------:|
 |1|7.07233|2.12765|
@@ -132,7 +133,7 @@ Aκολουθεί ένας πίνακας με τις ακριβείς τιμέ�
 |19|9.23934|3.65474|
 |20|9.27738|3.65612|
 
-Ακολουθούν τα διαγράμματα για τα benchmarks ως προς Area και Peak Power σύμφωνα με τις αλλαγές που έγιναν στις παραμέτρους στο προηγούμενο εργαστήριο:
+Παρακάτω τα διαγράμματα για τα benchmarks ως προς Area και Peak Power σύμφωνα με τις αλλαγές που έγιναν στις παραμέτρους στο προηγούμενο εργαστήριο:
 
 ![Figure_1](https://user-images.githubusercontent.com/73646657/150534128-f462ae40-f431-40cd-b33c-612401ed278b.png)
 ![Figure_2](https://user-images.githubusercontent.com/73646657/150534131-a2a10350-4ae4-4751-a816-5dd5b59d6ac2.png)
