@@ -71,8 +71,67 @@ Runtime Dynamic = 2.96053 W
 * __Energy__: Η παράμετρος αυτή θα είναι ίση με το γινόμενο του Delay με το άθροισμα των Runtime Dynamic, Subthreshold Leakage και Gate Leakage στο Core και στην L2. (Μονάδα μέτρησης: mJ). Για πιο εύκολη εξαγωγή της ενέργειας, λόγω του μεγάλου αριθμού των προσομοιώσεων, γίνεται χρήση της συνάρτησης print_energy.py μέσα από το κατάλληλο script. Τα αποτελέσματα για το κάθε benchmark φαίνονται στο αρχείο [energy_results](https://github.com/vasipetr/archlab3/tree/main/energy_results).
 * __Delay__: Είναι ίσο με το χρόνο εκτέλεσης κάθε προγράμματος και δίνεται από το sim_seconds, το οποίο μπορούμε να βρούμε στα stats.txt αρχεία του gem5. (Μονάδα μέτρησης: sec)
 * __Area__: To άθροισμα της παραμέτρου Area στον Core και στην L2. (Μονάδα μέτρησης: mm^2)
-
+ 
+Οπότε __EDAP = Energy * Delay * Area__
 ##### Ερώτημα 2
+Κοιτάζοντας τα [αποτελέσματά μας](https://github.com/vasipetr/archlab3/tree/main/mcpat_results) μπορούμε να πούμε ότι τα παρακάτω διαγράμματα αντικατοπτρίζουν τη συμπεριφορά όλων των benchmarks όσον αφορά Area και Peak Power.
+
+Tο εύρος τιμών των παραμέτρων που χρησιμοποιήθηκε για την προσομοίωση των benchmarks:
+* L1 Dcache size: 32, 64, 128
+* L1 Icache size: 32, 64, 128
+* L2 cache: 512, 2048, 4096
+* L1 Associativity: 1, 2, 4, 8
+* L2 Associativity: 1, 2, 4, 8
+* Cache Line Size: 32, 64, 128
+
+|Προσομοιώσεις|Συνδυασμός Παραμέτρων|
+|:-:|:-------------------:|
+|1|Cache Line Size: 32KB, L1 Dache: 64KB, L1 Icache: 32KB, L2 Cache: 512KB, L1 Dcache Associativity: 1, L1 Icache Associativity: 1, L2 Associativity: 2|
+|2|Cache Line Size: 64KB, L1 Dache: 64KB, L1 Icache: 32KB, L2 Cache: 512KB, L1 Dcache Associativity: 1, L1 Icache Associativity: 1, L2 Associativity: 2|
+|3|Cache Line Size: 128KB, L1 Dache: 64KB, L1 Icache: 32KB, L2 Cache: 512KB, L1 Dcache Associativity: 1, L1 Icache Associativity: 1, L2 Associativity: 2|
+|4|Cache Line Size: 64KB, L1 Dache: 64KB, L1 Icache: 32KB, L2 Cache: 512KB, L1 Dcache Associativity: 1, L1 Icache Associativity: 1, L2 Associativity: 2|
+|5|Cache Line Size: 64KB, L1 Dache: 64KB, L1 Icache: 32KB, L2 Cache: 512KB, L1 Dcache Associativity: 2, L1 Icache Associativity: 2, L2 Associativity: 2|
+|6|Cache Line Size: 64KB, L1 Dache: 64KB, L1 Icache: 32KB, L2 Cache: 512KB, L1 Dcache Associativity: 4, L1 Icache Associativity: 4, L2 Associativity: 2|
+|7|Cache Line Size: 64KB, L1 Dache: 64KB, L1 Icache: 32KB, L2 Cache: 512KB, L1 Dcache Associativity: 8, L1 Icache Associativity: 8, L2 Associativity: 2|
+|8|Cache Line Size: 64KB, L1 Dache: 32KB, L1 Icache: 32KB, L2 Cache: 512KB, L1 Dcache Associativity: 1, L1 Icache Associativity: 1, L2 Associativity: 2|
+|9|Cache Line Size: 64KB, L1 Dache: 64KB, L1 Icache: 32KB, L2 Cache: 512KB, L1 Dcache Associativity: 1, L1 Icache Associativity: 1, L2 Associativity: 2|
+|10|Cache Line Size: 64KB, L1 Dache: 128KB, L1 Icache: 32KB, L2 Cache: 512KB, L1 Dcache Associativity: 1, L1 Icache Associativity: 1, L2 Associativity: 2|
+|11|Cache Line Size: 64KB, L1 Dache: 64KB, L1 Icache: 32KB, L2 Cache: 512KB, L1 Dcache Associativity: 1, L1 Icache Associativity: 1, L2 Associativity: 2|
+|12|Cache Line Size: 64KB, L1 Dache: 64KB, L1 Icache: 64KB, L2 Cache: 512KB, L1 Dcache Associativity: 1, L1 Icache Associativity: 1, L2 Associativity: 2|
+|13|Cache Line Size: 64KB, L1 Dache: 64KB, L1 Icache: 128KB, L2 Cache: 512KB, L1 Dcache Associativity: 1, L1 Icache Associativity: 1, L2 Associativity: 2|
+|14|Cache Line Size: 64KB, L1 Dache: 64KB, L1 Icache: 32KB, L2 Cache: 512KB, L1 Dcache Associativity: 1, L1 Icache Associativity: 1, L2 Associativity: 2|
+|15|Cache Line Size: 64KB, L1 Dache: 64KB, L1 Icache: 32KB, L2 Cache: 2048KB, L1 Dcache Associativity: 1, L1 Icache Associativity: 1, L2 Associativity: 2|
+|16|Cache Line Size: 64KB, L1 Dache: 64KB, L1 Icache: 32KB, L2 Cache: 4096KB, L1 Dcache Associativity: 1, L1 Icache Associativity: 1, L2 Associativity: 2|
+|17|Cache Line Size: 64KB, L1 Dache: 64KB, L1 Icache: 32KB, L2 Cache: 512KB, L1 Dcache Associativity: 1, L1 Icache Associativity: 1, L2 Associativity: 1|
+|18|Cache Line Size: 64KB, L1 Dache: 64KB, L1 Icache: 32KB, L2 Cache: 512KB, L1 Dcache Associativity: 1, L1 Icache Associativity: 1, L2 Associativity: 2|
+|19|Cache Line Size: 64KB, L1 Dache: 64KB, L1 Icache: 32KB, L2 Cache: 512KB, L1 Dcache Associativity: 1, L1 Icache Associativity: 1, L2 Associativity: 4|
+|20|Cache Line Size: 64KB, L1 Dache: 64KB, L1 Icache: 32KB, L2 Cache: 512KB, L1 Dcache Associativity: 1, L1 Icache Associativity: 1, L2 Associativity: 8|
+
+
+Aκολουθεί ένας πίνακας με τις ακριβείς τιμές των Area, Peak Power καθώς και Runtime Dynamic, Subthreshold Leakage και Gate Leakage για κάθε προσομοίωση ξεχωριστά:
+| Προσομοιώσεις | Area (mm^2) |Peak Power (W)|
+|:-------------:|:-----------:|:---------:|
+|1|7.07233|2.12765|
+|2|9.24063|3.65447|
+|3|25.80184|7.9813|
+|4|9.24063|3.65447|
+|5|9.31363|3.68941|
+|6|8.94041|3.82721|
+|7|10.08718|4.42659|
+|8|6.61289|2.75792|
+|9|9.24063|3.65447|
+|10|11.80212|4.14478|
+|11|9.24063|3.65447|
+|12|11.62949|4.67857|
+|13|13.9581|5.2115|
+|14|9.240632|3.65447|
+|15|14.84274|3.82998|
+|16|20.02923|3.95297|
+|17|9.24155|3.65443|
+|18|9.24063|3.65447|
+|19|9.23934|3.65474|
+|20|9.27738|3.65612|
+
 Ακολουθούν τα διαγράμματα για τα benchmarks ως προς Area και Peak Power σύμφωνα με τις αλλαγές που έγιναν στις παραμέτρους στο προηγούμενο εργαστήριο:
 
 ![Figure_1](https://user-images.githubusercontent.com/73646657/150534128-f462ae40-f431-40cd-b33c-612401ed278b.png)
@@ -82,7 +141,7 @@ Runtime Dynamic = 2.96053 W
 ![Figure_5](https://user-images.githubusercontent.com/73646657/150534125-fc8028d5-f829-46d4-8524-acce8691a8cb.png)
 ![Figure_6](https://user-images.githubusercontent.com/73646657/150534127-4bab38b7-87a8-46df-be17-1edcba5dced6.png)
 
-Σύμφωνα με τα αποτελέσματά μας, μπορούμε να πούμε ότι τα παραπάνω διαγράμματα αντικατοπτρίζουν τη συμπεριφορά όλων των benchmarks όσον αφορά Area και Peak Power.
+
 ##### Ερώτημα 3
 Στο Βήμα 3 του προηγούμενου εργαστηρίου μας ζητήθηκε να κατασκευάσουμε μια συνάρτηση κόστους λαμβάνοντας υπόψιν τα αποτελέσματα των προσομοιώσεων. Καταλήξαμε στη συνάρτηση κόστους:
 ```
@@ -95,7 +154,7 @@ Cost = 0.4(L1isize + L1dsize) + 0.3(L1iassoc + L1dassoc) + 0.15(L2size) + 0.1(L2
 *	**Βαρύτητα γ και βαρύτητα δ:** Το μέγεθος της μνήμης L2 αν και σημαντικό για την λειτουργία της CPU μας είναι αρκετά μικρότερο από αυτό της L1. Θα ισχύει το αντίστοιχο για το associativity της. Γι αυτό και αυτά τα δύο βάρη θα αντιπροσωπεύουν περίπου το 1/4 του αθροίσματος όλων των βαρών.
 *	**Βαρύτητα ε:** Το μέγεθος της cache line size επηρεάζει το κόστος λιγότερο από όλα τα υπόλοιπα στοιχεία και για αυτό θα έχει την αντίστοιχη βαρύτητα, η οποία θα είναι της τάξης του 5%.
 
-Σύμφωνα με τα διαγράμματα του προηγούμενου ερωτήματος βλέπουμε ότι σημαντική αύξηση υπάρχει στο Area του Core και L2 όταν μεταβάλλονται οι σχετικοί παράγοντες και υπάρχει, επίσης, μια σχετική αύξηση σε μικρότερο βαθμό στη μέγιστη κατανάλωση ισχύος (peak power). Οι παράγοντες που επηρέσαν τη συνάρτηση κόστους φαίνεται να είναι οι ίδιοι που επηρεάζουν το Area κai Peak Power, δηλ. Cache Line Size, L1 Dcache,Icache και L1 Associativity, καθώς και το μέγεθος της L2 στην περίπτωση του Area. Απ' ότι φαίνεται οι αλλαγές που οδηγούν σε καλύτερο performance είναι και αυτές που "κοστίζουν" περισσότερο σε ισχύ.
+Σύμφωνα με τα διαγράμματα του προηγούμενου ερωτήματος βλέπουμε ότι σημαντική αύξηση υπάρχει στο Area του Core και L2 όταν μεταβάλλονται οι σχετικοί παράγοντες και υπάρχει, επίσης, μια σχετική αύξηση σε μικρότερο βαθμό στη μέγιστη κατανάλωση ισχύος (peak power). Οι παράγοντες που επηρέσαν τη συνάρτηση κόστους φαίνεται να είναι οι ίδιοι που επηρεάζουν το Area κai Peak Power, δηλ. Cache Line Size, L1 Dcache, Icache και L1 Associativity, καθώς και το μέγεθος της L2 στην περίπτωση του Area. Απ' ότι φαίνεται οι αλλαγές που οδηγούν σε καλύτερο performance είναι και αυτές που "κοστίζουν" περισσότερο σε ισχύ.
 ## Κριτική:
 Όσον αφορά το πρώτο βήμα της εργασίας, μας έδωσε την ευκαιρία να μάθουμε πολλά καινούργια πράγματα για τους επεξεργαστές και για τον McPAT. Αυτό που βρήκαμε επίσης πολύ χρήσιμο ήταν η εξοικείωση με την μελέτη και την εξαγωγή πληροφοριών από ένα επιστημονικό paper. Στο δεύτερο κομμάτι, εξοικειωθήκαμε ακόμα περισσότερο με την αυτοματοποίηση των διαδικασιών, καθώς χρειάστηκαν αρκετά bash scripts για πιο γρήγορη υλοποίηση των ερωτημάτων, αλλά και με την οπτικοποίηση των αποτελεσμάτων μας μέσω διαγραμμάτων.
 ## Συνολική Κριτική για τα Εργαστήρια:
